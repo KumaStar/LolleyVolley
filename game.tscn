@@ -1,0 +1,208 @@
+[gd_scene load_steps=23 format=3 uid="uid://boxhhoaee0b0k"]
+
+[ext_resource type="Texture2D" uid="uid://dlnjmvwkn7sfb" path="res://BVA2/beachbkgIso.png" id="1_80nbo"]
+[ext_resource type="Texture2D" uid="uid://cwrcq5gg3nwep" path="res://8-bits-palm-trees-gaming-assets-removebg-preview.png" id="2_e2o6t"]
+[ext_resource type="Script" uid="uid://dn1fu0fyyurhl" path="res://player1.gd" id="2_eow3j"]
+[ext_resource type="Texture2D" uid="uid://kwuxwv31pmeh" path="res://BVA2/playerIdle.png" id="2_ryrav"]
+[ext_resource type="Texture2D" uid="uid://c2cawgmq3f26e" path="res://Beach/124x124.png" id="3_feb5d"]
+[ext_resource type="SpriteFrames" uid="uid://byt3h38sovd2s" path="res://crab.tres" id="4_7jktm"]
+[ext_resource type="SpriteFrames" uid="uid://b0wvc608o26tn" path="res://net.tres" id="5_7jktm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eow3j"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(352, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5wjh"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(320, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vef74"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(288, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hve3p"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(256, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mfdv2"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(224, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iotsf"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(192, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lc2xo"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(160, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_215e1"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(128, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sc4i"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(96, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_80cx4"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(64, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8heu"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(32, 0, 32, 43)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvswv"]
+atlas = ExtResource("2_ryrav")
+region = Rect2(0, 0, 32, 43)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_boyg6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eow3j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5wjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vef74")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hve3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mfdv2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iotsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lc2xo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_215e1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sc4i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_80cx4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8heu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvswv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mwb40"]
+radius = 45.1774
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_80nbo"]
+
+[node name="game" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -3.0
+offset_right = 1922.0
+offset_bottom = 1077.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_80nbo")
+
+[node name="player1" type="CharacterBody2D" parent="."]
+position = Vector2(293, 392)
+script = ExtResource("2_eow3j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player1"]
+position = Vector2(51, 52.75)
+scale = Vector2(4.1875, 3.45349)
+sprite_frames = SubResource("SpriteFrames_boyg6")
+frame_progress = 0.47435
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
+position = Vector2(57, 48)
+shape = SubResource("CircleShape2D_mwb40")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(-61, 51)
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(2, 72)
+shape = SubResource("CircleShape2D_80nbo")
+
+[node name="tree1" type="Sprite2D" parent="."]
+position = Vector2(283, 212)
+scale = Vector2(1.68508, 1.62322)
+texture = ExtResource("2_e2o6t")
+region_enabled = true
+region_rect = Rect2(148.509, 11.0261, 142.899, 211.667)
+
+[node name="tree4" type="Sprite2D" parent="."]
+position = Vector2(66.8594, 915.75)
+scale = Vector2(2.04423, 2.04502)
+texture = ExtResource("2_e2o6t")
+region_enabled = true
+region_rect = Rect2(148.509, 11.0261, 142.899, 211.667)
+
+[node name="tree2" type="Sprite2D" parent="."]
+position = Vector2(1507.36, 208.75)
+scale = Vector2(1.60057, 1.70379)
+texture = ExtResource("2_e2o6t")
+region_enabled = true
+region_rect = Rect2(148.509, 11.0261, 142.899, 211.667)
+
+[node name="tree3" type="Sprite2D" parent="."]
+position = Vector2(601, 216)
+scale = Vector2(1.59554, 1.64989)
+texture = ExtResource("2_e2o6t")
+region_enabled = true
+region_rect = Rect2(433.587, 238.983, 140.151, 177.182)
+
+[node name="can1" type="Sprite2D" parent="."]
+position = Vector2(322, 1054)
+scale = Vector2(2.17327, 2.87667)
+texture = ExtResource("3_feb5d")
+region_enabled = true
+region_rect = Rect2(0, 128.756, 28.7512, 28.2876)
+
+[node name="can2" type="Sprite2D" parent="."]
+position = Vector2(385, 1064)
+rotation = -1.56032
+scale = Vector2(2.17327, 2.87667)
+texture = ExtResource("3_feb5d")
+region_enabled = true
+region_rect = Rect2(0, 128.756, 28.7512, 28.2876)
+
+[node name="can3" type="Sprite2D" parent="."]
+position = Vector2(260, 1038)
+rotation = -4.90263
+scale = Vector2(2.17327, 2.87667)
+texture = ExtResource("3_feb5d")
+region_enabled = true
+region_rect = Rect2(31.8979, 96.5202, 33.3071, 31.1208)
+
+[node name="crab" type="AnimatedSprite2D" parent="."]
+position = Vector2(1837.25, 335.5)
+scale = Vector2(4.67187, 5.65625)
+sprite_frames = ExtResource("4_7jktm")
+frame_progress = 0.227021
+
+[node name="net" type="AnimatedSprite2D" parent="."]
+position = Vector2(1008, 599)
+scale = Vector2(2.66044, 2.20629)
+sprite_frames = ExtResource("5_7jktm")
+animation = &"animatiojn"
+autoplay = "animatiojn"
+frame_progress = 0.305011
